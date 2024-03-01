@@ -4,7 +4,6 @@ import io.ktor.server.application.*
 import io.ktor.server.html.*
 import io.ktor.server.netty.*
 import io.ktor.server.plugins.callloging.*
-import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import kotlinx.html.*
 import org.koin.ktor.plugin.koin
@@ -17,9 +16,6 @@ fun Application.module() {
     }
     install(CallLogging)
     routing {
-        get("/a") {
-            call.respondText { "Hello, world!" }
-        }
         get("/") {
             call.respondHtml {
                 index()
